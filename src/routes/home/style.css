@@ -1,0 +1,60 @@
+
+.pageFromTop {
+    animation: animTop 1.3s ease-in-out alternate;
+}
+
+.pageFromBottom {
+    animation: animBot 1.3s ease-in-out alternate;
+}
+
+.pageToTop {
+    animation: AanimTop 1.3s ease-in-out alternate;
+}
+
+.pageToBottom {
+    animation: AanimBot 1.3s ease-in-out alternate;
+}
+
+@keyframes animTop {
+    from {
+        transform: rotate(-15deg) scale(0.7) translate(-60vw, -165vh);
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes animBot {
+    from {
+        opacity: 0.4;
+        transform: rotate(-15deg) scale(0.7) translate(60vw, 165vh);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes AanimTop {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+    to {
+        opacity: 0.4;
+        transform: rotate(-15deg) scale(0.7) translate(-60vw, -165vh);
+    }
+}
+
+@keyframes AanimBot {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+    to {
+        opacity: 0.4;
+        transform: rotate(-15deg) scale(0.7) translate(60vw, 165vh);
+    }
+}

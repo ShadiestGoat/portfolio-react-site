@@ -1,0 +1,117 @@
+:root {
+    --transTime: 0.4s;
+}
+
+.ico {
+    fill: white;
+    padding: 1vw;
+    border: 2px solid #5151b1;
+    border-radius: 12.5%;
+    cursor: pointer;
+    position: absolute;
+}
+
+.trans {
+    transition: fill var(--transTime) ease-out,
+                color var(--transTime) ease-out,
+                border-color var(--transTime) ease-out,
+                transform 1s ease-in-out,
+                padding 1s ease-out,
+                opacity 0.5s ease-in-out,
+                width 1s ease-out,
+                top 1s ease-out,
+                visibility 0.6s ease-in-out,
+                left 1s ease-out;
+}
+
+
+.ico:hover {
+    /* filter: invert(100%) */
+    fill: #e4e3a0;
+    border-color: #e6d67e;
+    padding: 0.65vw
+}
+
+.awayleft {
+    animation: left 1s ease-in-out;
+}
+
+.backleft {
+    animation: left 1s ease-in-out reverse;
+}
+
+.awayright {
+    animation: right 1s ease-in-out;
+}
+
+.backright {
+    animation: right 1s ease-in-out reverse;
+}
+
+.awayup {
+    animation: up 1s ease-in-out;
+}
+
+.backup {
+    animation: up 1s ease-in-out reverse;
+}
+
+.awaydown {
+    animation: down 1s ease-in-out;
+}
+
+.backdown {
+    animation: down 1s ease-in-out reverse;
+}
+
+@keyframes left {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+    to {
+        transform: translate(-70vw, 0px);
+        opacity: 0;
+    }
+}
+
+@keyframes right {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+    to {
+        transform: translate(70vw, 0px);
+        opacity: 0;
+    }
+}
+
+@keyframes up {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+    to {
+        transform: translate(0px, -70vh);
+        opacity: 0;
+    }
+}
+
+
+@keyframes down {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+    to {
+        transform: translate(0px, 70vh);
+        opacity: 0;
+    }
+}
+
+.info {
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+}
