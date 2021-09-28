@@ -4,6 +4,12 @@
       <circle cx="128" cy="128" r="128"/>
     </clipPath>
   </defs>
+  <style>
+      #t {fill: black}
+      @media (prefers-color-scheme: dark) {
+          #t {fill: white}
+       }
+  </style>
   <polygon points="256 0 0 0 0 213 256 43.08" clip-path="url(#c)" fill="#3e3d91"/>
-  <polygon points="0 256 0 213 256 43.08 256 256" clip-path="url(#c)"/>
+  <polygon points="0 256 0 213 256 43.08 256 256" clip-path="url(#c)" id="t" />
 </svg>

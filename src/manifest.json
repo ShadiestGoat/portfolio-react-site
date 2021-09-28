@@ -1,6 +1,7 @@
 {
   "name": "Shady Goat the Dev",
   "short_name": "Shady Dev",
+  "description": "The fullstack Developer known as Shady Goat & his portfolio have a strained relationship, find out why!",
   "start_url": "/",
   "display": "standalone",
   "orientation": "landscape",
@@ -15,7 +16,8 @@
     {
       "src": "/assets/icons/android-chrome-512x512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ]
 }
