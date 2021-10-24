@@ -78,6 +78,7 @@ const BoutMe:FunctionComponent<{
                             hide={hide}
                             selected={selected}
                             title={Langs[name].name}
+                            ariaLabel={Langs[name].name}
                             rounded={false}
                             showText={[Langs[name].name]}
                             onClick={() => changeSkillP(name)}
@@ -114,6 +115,7 @@ const BoutMe:FunctionComponent<{
                     rounded={true}
                     selected={selected}
                     showText={[Tools[n].name]}
+                    ariaLabel={Tools[n].name}
                     title={Tools[n].name}
                     a={Tools[n].a}
                 />
