@@ -78,7 +78,7 @@ const Home: FunctionalComponent = () => {
                         if (e.button) return
                         changePage('portfolio', 'up')
                     }}>
-                        View My Portfolio
+                        Portfolio
                     </button>
                     <button class="col btn btn-p" onClick={(e) => {
                         if (e.button) return
@@ -90,7 +90,7 @@ const Home: FunctionalComponent = () => {
                         if (e.button) return
                         changePage('boutme', 'up')
                     }}>
-                        About Me
+                        My Skills
                     </button>
                 </div>
             </Fragment>

@@ -45,12 +45,12 @@ const ContactMe:FunctionalComponent<{
             }
         </div>
         <div class={`row`} style={{marginTop: "10vh"}}>
-            <div class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
+            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
                 if (e.button != 0) return
                 changePage('home', 'down')
             }}>
             Home
-            </div>
+            </button>
         </div>
     </Fragment>
 }

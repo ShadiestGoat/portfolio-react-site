@@ -95,17 +95,17 @@ const Portfolio:FunctionComponent<{
             })
         }
         <div class={`row ${style.trans}`} style={{marginTop: "4vh", transform: (catP != "none") ? "translate(0px, 70vh)" : ""}}>
-            <div class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
+            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
                 if (e.button != 0) return
                 changePage('home', 'down')
             }}> Home
-            </div>
-            <div class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
+            </button>
+            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
                 if (e.button != 0) return
                 changePage('contact', 'up')
             }}>
                 Contact Me
-            </div>
+            </button>
         </div>
     </Fragment>
 }

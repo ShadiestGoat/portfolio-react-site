@@ -1,19 +1,21 @@
 import { FunctionComponent } from "preact";
 import { JSXInternal } from "preact/src/jsx";
 
-const SVGdef:FunctionComponent<{d:string, onAnimationEnd?:() => void, title:string, size:string, style:JSXInternal.CSSProperties,  className: string, onClick:() => void}> = ({
+const SVGdef:FunctionComponent<{d:string, onAnimationEnd?:() => void, title:string, size:string, style:JSXInternal.CSSProperties, ariaLabel?:string,  className: string, onClick:() => void}> = ({
     d,
     size,
     className,
     onClick,
     style,
     title,
-    onAnimationEnd
+    onAnimationEnd,
+    ariaLabel
 }) => <svg onClick={(e) => {if (e.button) return;onClick()}} onAnimationEnd={onAnimationEnd ?? (() => {return})}
     width={size}
     height={size}
     class={className}
     style={style}
+    label={ariaLabel ?? `I can work with ${title}`}
     alt={`The icon for ${title}`}
     role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>{title}</title>
