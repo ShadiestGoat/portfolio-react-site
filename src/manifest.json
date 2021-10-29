@@ -1,7 +1,7 @@
 {
-  "name": "Shady Goat the Dev",
-  "short_name": "Shady Dev",
-  "description": "The fullstack Developer known as Shady Goat's portfolio, now a cool react site :)",
+  "name": "Shady Goat | A FullStack Dev",
+  "short_name": "Shady Fullstack Dev",
+  "description": "Heya! I'm Shady Goat, a fullstack developer. I mainly do backend development, but I'm not bad at frontend. I know typescript, javascript, python, and learning golang. I do SQL, SQLite, noSQL (MongoDB). I know express, fastify for backend in node.js. I also do discord bots, using either python or node.js.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "landscape",

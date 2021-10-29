@@ -17,6 +17,9 @@ const SVGdef:FunctionComponent<{d:string, onAnimationEnd?:() => void, title:stri
     style={style}
     label={ariaLabel ?? `I can work with ${title}`}
     alt={`The icon for ${title}`}
+    title={title}
+    about={`The icon for ${title}`}
+    summary={`The icon for ${title}`}
     role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>{title}</title>
     <path d={d} strokeWidth="0.25" />
