@@ -4,6 +4,7 @@ import { Pages } from "../../../src/routes/home";
 import { categories, cats, project, projects } from "./icons"
 import style from "../Icon/style.css"
 import Icon from "../Icon";
+import ChangePage from "../changePage";
 
 const Portfolio:FunctionComponent<{
     gapF:number
@@ -97,17 +98,8 @@ const Portfolio:FunctionComponent<{
             })
         }
         <div class={`row ${style.trans}`} style={{marginTop: "4vh", transform: (catP != "none") ? "translate(0px, 70vh)" : ""}}>
-            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
-                if (e.button != 0) return
-                changePage('home', 'down')
-            }}> Home
-            </button>
-            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
-                if (e.button != 0) return
-                changePage('contact', 'up')
-            }}>
-                Contact Me
-            </button>
+            <ChangePage changePage={changePage} page="home" push="down" />
+            <ChangePage changePage={changePage} page="contact" push="up" />
         </div>
     </Fragment>
 }

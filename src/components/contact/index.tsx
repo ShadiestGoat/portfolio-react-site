@@ -2,6 +2,7 @@ import { Fragment, FunctionalComponent } from "preact";
 import { Pages } from "../../routes/home";
 import SVGdef from "../svg";
 import iconStyle from "../Icon/style.css"
+import ChangePage from "../changePage";
 
 const contactInfo:Record<string, {info:string, icon:string, open:string}> = {
     Discord: {
@@ -45,12 +46,7 @@ const ContactMe:FunctionalComponent<{
             }
         </div>
         <div class={`row`} style={{marginTop: "10vh"}}>
-            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
-                if (e.button != 0) return
-                changePage('home', 'down')
-            }}>
-            Home
-            </button>
+        <ChangePage changePage={changePage} page="home" push="down" />
         </div>
     </Fragment>
 }

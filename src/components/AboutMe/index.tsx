@@ -4,6 +4,7 @@ import { Pages } from "../../routes/home";
 import { Langs, SimpleIconsL, SimpleIconsT, Tools } from "./icons";
 import style from "../Icon/style.css"
 import Icon from "../Icon/index"
+import ChangePage from "../changePage";
 
 const BoutMe:FunctionComponent<{
     gapF:number
@@ -123,17 +124,8 @@ const BoutMe:FunctionComponent<{
         }
 
         <div class={`row ${style.trans}`} style={{marginTop: "4vh", transform: (skillP != "none" || selectedTool) ? "translate(0px, 70vh)" : ""}}>
-            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
-                if (e.button != 0) return
-                changePage('home', 'down')
-            }}> Home
-            </button>
-            <button class="col btn btn-p" style={{flex: "0 0 0px", justifyContent: "center"}} onClick={(e) => {
-                if (e.button != 0) return
-                changePage('contact', 'up')
-            }}>
-                Contact Me
-            </button>
+            <ChangePage changePage={changePage} page="home" push="down" />
+            <ChangePage changePage={changePage} page="contact" push="up" />
         </div>
     </Fragment>
 }

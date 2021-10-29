@@ -17,7 +17,10 @@ export const cats:Record<categories, {full:string, icon:string, proj: projects[]
         proj: [
             [
                 "ImgApi",
-                "RougeLike"
+                "RougeLike",
+                "Capitalist"
+            ],[
+                "NodeMessanger"
             ]
         ],
         cl: "left",

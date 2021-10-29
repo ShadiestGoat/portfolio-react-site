@@ -1,7 +1,8 @@
-import { Fragment, FunctionalComponent } from 'preact';
-import { useCallback, useState } from "preact/hooks"
+import { FunctionalComponent } from 'preact';
+import { useCallback, useMemo, useState } from "preact/hooks"
 import BoutMe from '../../components/AboutMe';
 import ContactMe from '../../components/contact';
+import HomeP from '../../components/Home';
 import Portfolio from '../../components/portfolio';
 import style from "./style.css"
 
@@ -21,7 +22,9 @@ export type Pages = "home" |
              "contact" |
              "boutme"
 
-type PageState = {
+const allPages:Pages[] = ["portfolio", "home", "contact", "boutme"]
+
+export type PageState = {
     pages: Record<Pages, PageStatus>,
     oPages: Record<Pages, PageStatus>
     pageStatus: Record<Pages, boolean>
@@ -29,27 +32,35 @@ type PageState = {
 }
 
 const Home: FunctionalComponent = () => {
-    const [pages, setPages] = useState<PageState>({
-        pages: {
-            home: 1,
-            portfolio: 0,
-            contact: 0,
-            boutme: 0
-        },
-        oPages: {
-            home: 1,
-            portfolio: 0,
-            contact: 0,
-            boutme: 0
-        },
-        pageStatus: {
-            home: true,
-            portfolio: false,
-            contact: false,
-            boutme: false
-        },
-        curP: "home"
-    })
+    const [pages, setPages] = useState<PageState>((
+        () => {
+        const initPage = allPages.includes(location.pathname.substr(1) as Pages) ? location.pathname.substr(1) as Pages : "home"
+        const pg:PageState = {
+            pages: {
+                home: 0,
+                portfolio: 0,
+                contact: 0,
+                boutme: 0
+            },
+            oPages: {
+                home: 0,
+                portfolio: 0,
+                contact: 0,
+                boutme: 0
+            },
+            pageStatus: {
+                home: false,
+                portfolio: false,
+                contact: false,
+                boutme: false
+            },
+            curP: initPage
+        }
+        pg.pages[initPage] = 1
+        pg.oPages[initPage] = 1
+        pg.pageStatus[initPage] = true
+        return pg
+    })())
 
     const [firstT, setFirstT] = useState<boolean>(true)
 
@@ -61,44 +72,17 @@ const Home: FunctionalComponent = () => {
         newP.pageStatus[newPage] = true
         newP.oPages[pages.curP] = push == "down" ? 0 : 2
         setPages(newP)
-        // route(`/${newPage}`, true)
         setFirstT(false)
-
-    }, [pages, setPages])
+    },  [pages, setPages])
 
     const gapIcon = 6
 
-    const cards:Record<Pages, JSX.Element> = {
-        home: (
-            <Fragment>
-                <h1 class="row" style={{marginTop: "20vh"}}>Hey There, I'm Shady Goat</h1>
-                <h2 class="row" style={{marginTop: "3vh", marginBottom: "26vh"}}>A Fullstack Dev</h2>
-                <div class="row">
-                    <button class="col btn btn-p" onClick={(e) => {
-                        if (e.button) return
-                        changePage('portfolio', 'up')
-                    }}>
-                        Portfolio
-                    </button>
-                    <button class="col btn btn-p" onClick={(e) => {
-                        if (e.button) return
-                        changePage('contact', 'up')
-                    }}>
-                        Contact Me
-                    </button>
-                    <button class="col btn btn-p" onClick={(e) => {
-                        if (e.button) return
-                        changePage('boutme', 'up')
-                    }}>
-                        My Skills
-                    </button>
-                </div>
-            </Fragment>
-        ),
+    const cards:Record<Pages, JSX.Element> = useMemo(() => ({
+        home: <HomeP changePage={changePage} />,
         portfolio: <Portfolio changePage={changePage} gapF={gapIcon} />,
         boutme: <BoutMe changePage={changePage} gapF={gapIcon} />,
         contact: <ContactMe changePage={changePage} />,
-    }
+    }), [changePage])
 
     return (
         <div style={{overflow: 'hidden', width: "100vw", height: "100vh"}}>

@@ -1,7 +1,7 @@
 {
   "name": "Shady Goat the Dev",
   "short_name": "Shady Dev",
-  "description": "The fullstack Developer known as Shady Goat & his portfolio have a strained relationship, find out why!",
+  "description": "The fullstack Developer known as Shady Goat's portfolio, now a cool react site :)",
   "start_url": "/",
   "display": "standalone",
   "orientation": "landscape",

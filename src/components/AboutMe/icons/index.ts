@@ -88,7 +88,7 @@ export const Langs:Record<SimpleIconsL, {d: string, a: string, name: string, too
         a: "https://www.typescriptlang.org",
         name: "Typescript",
         tools: [
-            ["node", "mongoose"],
+            ["mongosteel", "node", "mongoose"],
             ["discordjs", "express"]
         ]
     },
@@ -98,8 +98,8 @@ export const Langs:Record<SimpleIconsL, {d: string, a: string, name: string, too
         a: "https://www.javascript.com",
         name: "JavaScript",
         tools: [
+            ["mongosteel", "express", "mongoose"],
             ["node", "discordjs"],
-            ["express", "mongoose"]
         ]
     },
     // https://simpleicons.org
