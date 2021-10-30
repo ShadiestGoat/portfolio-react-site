@@ -28,26 +28,35 @@ const ContactMe:FunctionalComponent<{
     return <Fragment>
         <div class={`col`}>
             <h1 class="row" style={{marginTop: "12vh"}}>Hey There, I'm Shady Goat</h1>
-            <h2 class="row" style={{marginTop: "3vh", marginBottom: "4vh"}}>But call me Shady (he/him). You can contact me like this</h2>
+            <h2 class="row" style={{marginTop: "3vh", marginBottom: "4vh"}}>But call me Shady (he/him). Here are my socials/contacts ^^</h2>
         </div>
         <div class="row" style={{width: "100%", marginTop: "5vh"}}>
             {
                 Object.keys(contactInfo).map(item => {
-                    const svg = <SVGdef
-                        title={item}
-                        d={contactInfo[item].icon}
-                        className={`${iconStyle.ico} ${iconStyle.trans}`}
-                        onClick={():void => {return}}
-                        size="6vw"
-                        style={{position: "relative"}}
-                        ariaLabel={`Icon for my ${item}`}
+                    return contactInfo[item].open ? <a href={contactInfo[item].open} target="_blank" rel="noreferrer" key={item} class="col" style={{alignItems: "center", textDecoration: "none", width: `${100/Object.keys(contactInfo).length}%`}}>
+                        <SVGdef
+                            title={`${item}-i`}
+                            d={contactInfo[item].icon}
+                            className={`${iconStyle.ico} ${iconStyle.trans}`}
+                            onClick={():void => {return}}
+                            size="6vw"
+                            style={{position: "relative"}}
+                            ariaLabel={`Icon for my ${item}`}
                         />
-                    if (contactInfo[item].open) return <a href={contactInfo[item].open} target="_blank" rel="noreferrer" class="col" key={item} style={{alignItems: "center", justifyContent: "center", alignContent: "center", width: `${100/Object.keys(contactInfo).length}%`}}>{svg}</a>
-                    return <div key={item} class="col" style={{alignItems: "center", width: `${100/Object.keys(contactInfo).length}%`}}>
-                        {svg}
-                    <h2 style={{marginTop: "4vh"}}>{contactInfo[item].info}</h2>
-                </div>}
-                )
+                        <h2 style={{marginTop: "4vh"}}>{contactInfo[item].info}</h2>
+                    </a> : <div key={item} class="col" style={{alignItems: "center", width: `${100/Object.keys(contactInfo).length}%`}}>
+                        <SVGdef
+                            title={`${item}-i`}
+                            d={contactInfo[item].icon}
+                            className={`${iconStyle.ico} ${iconStyle.trans}`}
+                            onClick={():void => {return}}
+                            size="6vw"
+                            style={{position: "relative"}}
+                            ariaLabel={`Icon for my ${item}`}
+                        />
+                        <h2 style={{marginTop: "4vh"}}>{contactInfo[item].info}</h2>
+                    </div>
+                })
             }
         </div>
         <div class={`row`} style={{marginTop: "10vh"}}>
