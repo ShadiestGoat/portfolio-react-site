@@ -41,6 +41,7 @@ const Portfolio:FunctionComponent = () => {
                     {
                         Hehe.map((name, index) => {
                             return <Icon key={name}
+                                lvl1={true}
                                 ariaLabel={cats[name].full}
                                 src={[cats[name].icon, "svg"]}
                                 hide={(catP != name) && catP != "none"  || selectedSmt}
@@ -80,6 +81,7 @@ const Portfolio:FunctionComponent = () => {
                     }
                 })
                 return <Icon key={n}
+                    lvl1={false}
                     ariaLabel={project[n].full}
                     src={project[n].img}
                     hide={!projectI.flat().includes(n)}

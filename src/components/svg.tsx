@@ -1,7 +1,7 @@
 import { FunctionComponent } from "preact";
 import { JSXInternal } from "preact/src/jsx";
 
-const SVGdef:FunctionComponent<{d:string, onAnimationEnd?:() => void, title:string, size:string, style:JSXInternal.CSSProperties, ariaLabel?:string,  className: string, onClick:() => void}> = ({
+const SVGdef:FunctionComponent<{d:string, onAnimationEnd?:() => void, title:string, size:string, style:JSXInternal.CSSProperties, ariaLabel?:string, className: string, onClick?:() => void}> = ({
     d,
     size,
     className,
@@ -10,7 +10,7 @@ const SVGdef:FunctionComponent<{d:string, onAnimationEnd?:() => void, title:stri
     title,
     onAnimationEnd,
     ariaLabel
-}) => <svg onClick={(e) => {if (e.button) return;onClick()}} onAnimationEnd={onAnimationEnd ?? (() => {return})}
+}) => <svg onClick={(e) => {if (e.button || !onClick) return; onClick()}} onAnimationEnd={onAnimationEnd ?? (() => {return})}
     width={size}
     height={size}
     class={className}
@@ -20,7 +20,7 @@ const SVGdef:FunctionComponent<{d:string, onAnimationEnd?:() => void, title:stri
     title={title}
     about={`The icon for ${title}`}
     summary={`The icon for ${title}`}
-    role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    role={onClick ? "button" : "img"} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>{title}</title>
     <path d={d} strokeWidth="0.25" />
 </svg>

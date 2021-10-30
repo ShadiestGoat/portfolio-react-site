@@ -35,7 +35,6 @@ const ContactMe:FunctionalComponent = () => {
                             title={`${item}-i`}
                             d={contactInfo[item].icon}
                             className={`${iconStyle.ico} ${iconStyle.trans}`}
-                            onClick={():void => {return}}
                             size="6vw"
                             style={{position: "relative"}}
                             ariaLabel={`Icon for my ${item}`}
@@ -46,7 +45,6 @@ const ContactMe:FunctionalComponent = () => {
                             title={`${item}-i`}
                             d={contactInfo[item].icon}
                             className={`${iconStyle.ico} ${iconStyle.trans}`}
-                            onClick={():void => {return}}
                             size="6vw"
                             style={{position: "relative"}}
                             ariaLabel={`Icon for my ${item}`}

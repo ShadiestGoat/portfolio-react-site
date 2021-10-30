@@ -1,6 +1,6 @@
 import { FunctionalComponent } from 'preact';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from "react-transition-group"
+import { CSSTransition, TransitionGroup } from "preact-transitioning"
 import { Helmet } from 'react-helmet';
 import BoutMe from './AboutMe';
 import ContactMe from './contact';
@@ -23,7 +23,7 @@ const App: FunctionalComponent = () => {
                 <Route render={(rrr) => {
                     return (
                     <TransitionGroup>
-                        <CSSTransition key={rrr.location.key} timeout={1300} classNames="pageFromTop">
+                        <CSSTransition key={rrr.location.key} exit={true} in={true} enter={true} appear={false} duration={1300} classNames="pageFromTop">
                             <div class="col" style={{width: `50vw`, position: "absolute", left: "25vw"}}>
                                 <Switch location={rrr.location}>
                                     <Route exact path="/" component={HomeP} />

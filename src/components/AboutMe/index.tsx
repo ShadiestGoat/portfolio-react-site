@@ -71,6 +71,7 @@ const BoutMe:FunctionComponent = () => {
                         }
 
                         return <Icon key={name}
+                            lvl1={true}
                             src={[Langs[name].d, "svg"]}
                             hide={hide}
                             selected={selected}
@@ -105,6 +106,7 @@ const BoutMe:FunctionComponent = () => {
                     }
                 })
                 return <Icon key={n}
+                    lvl1={false}
                     src={[Tools[n].d, "svg"]}
                     hide={!toolI.flat().includes(n)}
                     inRow={ia}

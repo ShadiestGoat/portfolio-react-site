@@ -13,7 +13,8 @@ const Icon:FunctionComponent<{
     rounded: boolean,
     showText:string[],
     a:string,
-    ariaLabel:string
+    ariaLabel:string,
+    lvl1: boolean
 }> = ({
     hide,
     selected,
@@ -24,9 +25,10 @@ const Icon:FunctionComponent<{
     rounded,
     showText,
     a,
-    ariaLabel
+    ariaLabel,
+    lvl1
 }) => {
-    const [showElmt, setShowElmnt] = useState(true)
+    const [showElmt, setShowElmnt] = useState(lvl1)
     const [showH, setShowH] = useState(selected)
 
     const [comeback, setComeBack] = useState(false)
@@ -62,6 +64,7 @@ const Icon:FunctionComponent<{
                 borderRadius: `${rounded ? 50 : 12.25}%`
             }} ariaLabel={ariaLabel}
             /> : <img
+            role="button"
             label={ariaLabel}
             alt={`The icon for ${title}`}
             onAnimationEnd={() => {if (hide) setShowElmnt(false);setComeBack(false)}}
