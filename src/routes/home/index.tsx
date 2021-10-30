@@ -88,7 +88,7 @@ const Home: FunctionalComponent = () => {
     return (
         <div style={{overflow: 'hidden', width: "100vw", height: "100vh"}}>
             <Helmet>
-                <link rel="canonical" href={`httsp://shadygoat.eu${location.pathname}`} />
+                <link rel="canonical" href={`https://shadygoat.eu${location.pathname}`} />
             </Helmet>
             {
             Object.keys(cards).map((name) => {
