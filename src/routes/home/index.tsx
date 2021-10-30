@@ -5,6 +5,7 @@ import ContactMe from '../../components/contact';
 import HomeP from '../../components/Home';
 import Portfolio from '../../components/portfolio';
 import style from "./style.css"
+import Helmet from "react-helmet"
 
 /**
  * 0 - Below screen
@@ -86,6 +87,9 @@ const Home: FunctionalComponent = () => {
 
     return (
         <div style={{overflow: 'hidden', width: "100vw", height: "100vh"}}>
+            <Helmet>
+                <link rel="canonical" href={`httsp://shadygoat.eu${location.pathname}`} />
+            </Helmet>
             {
             Object.keys(cards).map((name) => {
                 const n:Pages = name as Pages
