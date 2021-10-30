@@ -1,15 +1,11 @@
 import { Fragment, FunctionComponent } from "preact";
 import { useCallback, useState } from "preact/hooks";
-import { Pages } from "../../routes/home";
 import { Langs, SimpleIconsL, SimpleIconsT, Tools } from "./icons";
 import style from "../Icon/style.css"
 import Icon from "../Icon/index"
 import ChangePage from "../changePage";
 
-const BoutMe:FunctionComponent<{
-    gapF:number
-    changePage:(newPage: Pages, push: "up" | "down") => void
-}> = ({ changePage, gapF }) => {
+const BoutMe:FunctionComponent = () => {
     const [skillP, setSkillPage] = useState<SimpleIconsL | "none">("none")
     const [toolI, setToolI] = useState<SimpleIconsT[][]>([[]])
     const [selectedTool, setselectedTool] = useState<boolean>(false)
@@ -49,7 +45,7 @@ const BoutMe:FunctionComponent<{
             <h2 class="row" style={{marginTop: "3vh", marginBottom: "4vh"}}>But call me Shady (he/him). Here is my skill set:</h2>
         </div>
         {
-            LangIcons.map((Hehe, rowIndex) => (<div key={Hehe.join(',')} class="row" style={{marginBottom: "4vh", height: `${gapF}vw`}}>
+            LangIcons.map((Hehe, rowIndex) => (<div key={Hehe.join(',')} class="row" style={{marginBottom: "4vh", height: `6vw`}}>
                 {
                     Hehe.map((name, index) => {
                         const hideCondsArr = ToolToLangs[toolI[0][0]] ?? []
@@ -124,8 +120,8 @@ const BoutMe:FunctionComponent<{
         }
 
         <div class={`row ${style.trans}`} style={{marginTop: "4vh", transform: (skillP != "none" || selectedTool) ? "translate(0px, 70vh)" : ""}}>
-            <ChangePage changePage={changePage} page="home" push="down" />
-            <ChangePage changePage={changePage} page="contact" push="up" />
+            <ChangePage page="" push="down" />
+            <ChangePage page="contact" push="up" />
         </div>
     </Fragment>
 }

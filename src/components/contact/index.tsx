@@ -1,5 +1,4 @@
 import { Fragment, FunctionalComponent } from "preact";
-import { Pages } from "../../routes/home";
 import SVGdef from "../svg";
 import iconStyle from "../Icon/style.css"
 import ChangePage from "../changePage";
@@ -22,9 +21,7 @@ const contactInfo:Record<string, {info:string, icon:string, open:string}> = {
     },
 }
 
-const ContactMe:FunctionalComponent<{
-    changePage:(newPage: Pages, push: "up" | "down") => void,
-}> = ({changePage}) => {
+const ContactMe:FunctionalComponent = () => {
     return <Fragment>
         <div class={`col`}>
             <h1 class="row" style={{marginTop: "12vh"}}>Hey There, I'm Shady Goat</h1>
@@ -60,7 +57,7 @@ const ContactMe:FunctionalComponent<{
             }
         </div>
         <div class={`row`} style={{marginTop: "10vh"}}>
-        <ChangePage changePage={changePage} page="home" push="down" />
+        <ChangePage page="" push="down" />
         </div>
     </Fragment>
 }

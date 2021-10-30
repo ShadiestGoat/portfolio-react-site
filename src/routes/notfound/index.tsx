@@ -1,5 +1,5 @@
 import { FunctionalComponent } from 'preact';
-import { Link } from 'preact-router/match';
+import { Link } from 'react-router-dom';
 import style from './style.css';
 
 const Notfound: FunctionalComponent = () => {
@@ -7,7 +7,7 @@ const Notfound: FunctionalComponent = () => {
         <div class={style.notfound}>
             <h1>Error 404</h1>
             <p>That page doesn&apos;t exist.</p>
-            <Link href="/">
+            <Link to="/">
                 <h4>Back to Home</h4>
             </Link>
         </div>

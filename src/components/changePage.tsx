@@ -1,23 +1,19 @@
-import { FunctionComponent } from "react";
-import { Pages } from "../routes/home";
+import { Link } from "react-router-dom";
+import { FunctionComponent } from "preact";
+import { Pages } from "./app";
 
 const ChangePage:FunctionComponent<{
-    changePage:(newPage: Pages, push: "up" | "down") => void,
     page: Pages,
     push: "up" | "down",
-}> = ({changePage, page, push}) => {
+}> = ({page}) => {
     const msgs:Record<Pages, string> = {
         boutme: "My Skills",
         contact: "Contact Me",
         portfolio: "Portfolio",
-        home: "Back Home"
+        "": "Back Home"
     }
-    return <button class="col btn btn-p" onClick={(e) => {
-        if (e.button) return
-        changePage(page, push)
-        }}>
-        {msgs[page]}
-    </button>
+
+    return <Link className="col btn btn-p" to={`/${page}`} style={{textDecoration: "none"}}>{msgs[page]}</Link>
 }
 
 export default ChangePage

@@ -57,7 +57,8 @@ const Icon:FunctionComponent<{
             style={{
                 padding: selected ? "0.5vw" : "",
                 top: `${selected ? 16 : (29.2 + 16*inRow.row)}vh`,
-                left: `${selected ? 47 : ((56*inRow.pos)/(inRow.rowLength + 1) + 56/(inRow.rowLength + 1) + 19)}vw`,
+                // left: `${selected ? 47 : ((56*inRow.pos)/(inRow.rowLength + 1) + 56/(inRow.rowLength + 1) + 19)}vw`,
+                left: `${selected ? 22 : ((56*inRow.pos)/(inRow.rowLength + 1) + 56/(inRow.rowLength + 1) - 6)}vw`,
                 borderRadius: `${rounded ? 50 : 12.25}%`
             }} ariaLabel={ariaLabel}
             /> : <img
@@ -71,7 +72,7 @@ const Icon:FunctionComponent<{
             style={{
                 padding: selected ? "0.5vw" : "",
                 top: `${selected ? 16 : (29.2 + 16*inRow.row)}vh`,
-                left: `${selected ? 47 : ((56*inRow.pos)/(inRow.rowLength + 1) + 56/(inRow.rowLength + 1) + 19)}vw`,
+                left: `${selected ? 22 : ((56*inRow.pos)/(inRow.rowLength + 1) + 56/(inRow.rowLength + 1) - 6)}vw`,
                 borderRadius: `${rounded ? 50 : 12.25}%`,
                 width: "6vw",
                 height: "6vw"

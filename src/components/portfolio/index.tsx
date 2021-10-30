@@ -1,15 +1,11 @@
 import { Fragment, FunctionComponent } from "preact";
 import { useCallback, useState } from "preact/hooks";
-import { Pages } from "../../../src/routes/home";
 import { categories, cats, project, projects } from "./icons"
 import style from "../Icon/style.css"
 import Icon from "../Icon";
 import ChangePage from "../changePage";
 
-const Portfolio:FunctionComponent<{
-    gapF:number
-    changePage:(newPage: Pages, push: "up" | "down") => void
-}> = ({ changePage, gapF }) => {
+const Portfolio:FunctionComponent = () => {
     const [catP, setCatPage] = useState<categories | "none">("none")
     const [projectI, setProjectI] = useState<projects[][]>([[]])
     const [selectedSmt, setSelectedSmt] = useState<boolean>(false)
@@ -41,7 +37,7 @@ const Portfolio:FunctionComponent<{
             <h2 class="row" style={{marginTop: "3vh", marginBottom: "4vh"}}>But call me Shady (he/him). Here are my projects</h2>
         </div>
         {
-            Cats.map((Hehe, rowIndex) => (<div key={Hehe.join(',')} class="row" style={{marginBottom: "4vh", height: `${gapF}vw`}}>
+            Cats.map((Hehe, rowIndex) => (<div key={Hehe.join(',')} class="row" style={{marginBottom: "4vh", height: `6vw`}}>
                     {
                         Hehe.map((name, index) => {
                             return <Icon key={name}
@@ -98,8 +94,8 @@ const Portfolio:FunctionComponent<{
             })
         }
         <div class={`row ${style.trans}`} style={{marginTop: "4vh", transform: (catP != "none") ? "translate(0px, 70vh)" : ""}}>
-            <ChangePage changePage={changePage} page="home" push="down" />
-            <ChangePage changePage={changePage} page="contact" push="up" />
+            <ChangePage page="" push="down" />
+            <ChangePage page="contact" push="up" />
         </div>
     </Fragment>
 }
