@@ -172,7 +172,7 @@ export const project:Record<projects, {
     Schedual: {
         full: "Interactive Schedual",
         desc: "A Progressive Web App to tell me what my next class is, using Preact",
-        a: "https://github.com/ShadiestGoat/schedule",
+        a: "https://sch.shadygoat.eu",
         img: ["/assets/pfp.webp", "img"]
     },
     ShadyGoat: {
