@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "license": "MIT",
     "scripts": {
-        "build": "preact build",
+        "build": "preact build --no-prerender",
         "serve": "./node_modules/.bin/sirv build --port 5234 --cors --single --host",
         "dev": "preact watch",
         "lint": "eslint 'src/**/*.{ts,tsx}'"
